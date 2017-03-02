@@ -6,7 +6,7 @@ float(jedn_astr)
 def Wszystkie_Planety(planety):
     for i in range(len(planety)):
         print(planety[i].nazwa)
-        print(((float(planety[i].odleglosc_astro)* jedn_astr))/1000, 'tys. km')
+        print(((float(planety[i].odleglosc_astro)* jedn_astr))/100000, 'tys. km')
         print(planety[i].czy_planeta)
 
 def Rzeczywiste_Planety(planety, zwroc_liste):
