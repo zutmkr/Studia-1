@@ -7,6 +7,9 @@
 /___,' \___/|_|  \___/ \__|_| |_|\__, ||___/ /___,'  \__,_|_| |_|\__, |\___|\___/|_| |_|
                                  |___/                           |___/                  
 
+(Alpha v0.03):
+	- dodano linijke pytającą, gdzie gracz ma się udać
+	- zwiększono czas wyświetlania informacji dla gracza do 1 sekundy (z 0.3s)
 
 (Alpha v0.02):
 	- dodano obsługe poruszania graczem bez potrzeby zaakceptowania

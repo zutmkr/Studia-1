@@ -132,6 +132,7 @@ class Gracz():
 def PoruszaniePoMapie(gr,Maps):
     gr.pobierzPozycje(Maps)
     while True:
+		print('\n\nQuo vadis?>', end='')
         h = ord(getch())
         if h == 119:
             if gr.pozycja[0] - 1 >= 0 and Maps.mapa[gr.pozycja[0]-1][gr.pozycja[1]].otwarty == True:
@@ -204,7 +205,7 @@ def PoruszaniePoMapie(gr,Maps):
         else:
             print('Zla droga kroczysz!')
             
-				sleep(.300)
+				sleep(1)
         Maps.RysujMape()
 
 def LOGO():
