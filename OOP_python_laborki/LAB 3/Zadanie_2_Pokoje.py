@@ -1,3 +1,5 @@
+from msvcrt import getch
+from time import sleep
 import random
 import os
 
@@ -130,8 +132,8 @@ class Gracz():
 def PoruszaniePoMapie(gr,Maps):
     gr.pobierzPozycje(Maps)
     while True:
-        h = input('\n\nQuo vadis?>')
-        if h == 'w':
+        h = ord(getch())
+        if h == 119:
             if gr.pozycja[0] - 1 >= 0 and Maps.mapa[gr.pozycja[0]-1][gr.pozycja[1]].otwarty == True:
                 Maps.mapa[gr.pozycja[0] - 1][gr.pozycja[1]] = gr
                 Maps.mapa[gr.pozycja[0]][gr.pozycja[1]] = Pokoj()
@@ -145,7 +147,7 @@ def PoruszaniePoMapie(gr,Maps):
                     gr.punkty -=1
             else:
                 print('Nie mozesz tam isc, to sciana.')
-        elif h == 's':
+        elif h == 115:
             if gr.pozycja[0] + 1 < len(Maps.mapa) and Maps.mapa[gr.pozycja[0]+1][gr.pozycja[1]].otwarty == True:
                 Maps.mapa[gr.pozycja[0] + 1][gr.pozycja[1]] = gr
                 Maps.mapa[gr.pozycja[0]][gr.pozycja[1]] = Pokoj()
@@ -165,7 +167,7 @@ def PoruszaniePoMapie(gr,Maps):
                         gr.punkty -=1
             else:
                 print('Nie mozesz tam isc, to sciana.')
-        elif h == 'a':
+        elif h == 97:
             if gr.pozycja[1] - 1 >= 0 and Maps.mapa[gr.pozycja[0]][gr.pozycja[1]-1].otwarty == True:
                 Maps.mapa[gr.pozycja[0]][gr.pozycja[1] - 1] = gr
                 Maps.mapa[gr.pozycja[0]][gr.pozycja[1]] = Pokoj()
@@ -179,7 +181,7 @@ def PoruszaniePoMapie(gr,Maps):
                     gr.punkty -=1
             else:
                 print('Nie mozesz tam isc, to sciana.')
-        elif h == 'd':
+        elif h == 100:
             if gr.pozycja[1] + 1 < len(Maps.mapa) and Maps.mapa[gr.pozycja[0]][gr.pozycja[1]+1].otwarty == True:
                 Maps.mapa[gr.pozycja[0]][gr.pozycja[1] + 1] = gr
                 Maps.mapa[gr.pozycja[0]][gr.pozycja[1]] = Pokoj()
@@ -201,7 +203,8 @@ def PoruszaniePoMapie(gr,Maps):
                 print('Nie mozesz tam isc, to sciana.')
         else:
             print('Zla droga kroczysz!')
-
+            
+				sleep(.300)
         Maps.RysujMape()
 
 def LOGO():
